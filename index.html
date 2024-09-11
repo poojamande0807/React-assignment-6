@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components in React</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            background: url('https://zerodha.com/static/images/landing-page.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .content {
+            padding: 2rem;
+        }
+
+        .card {
+            background-color: #f8f8f8;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        const Navbar = () => (
+            <nav>
+                <div>My Logo</div>
+                <div>
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Products</a>
+                    <a href="#">Contact</a>
+                </div>
+               
+            </nav>
+        );
+
+        const HeroSection = () => (
+            <div className="hero">
+                <div>
+                    <img src="https://zerodha.com/static/images/landing.png" />
+                </div>
+            </div>
+        );
+
+        const Content = () => (
+            <div className="content">
+             
+                <div className="card">
+                    <h2>Explore our Products</h2>
+                    <p>Check out our amazing range of products.</p>
+                </div>
+                <div className="card">
+                    <h2>Why Choose Us?</h2>
+                    <p>We offer the best services to help you grow.</p>
+                </div>
+            </div>
+        );
+
+        const App = () => (
+            <>
+                <Navbar />
+                <HeroSection />
+                <Content />
+            </>
+        );
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
